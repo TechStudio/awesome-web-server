@@ -1,7 +1,7 @@
 require 'sys/filesystem'
 require 'filesize'
 
-def check_free_space(loc="/")
+def free_space(loc="/")
   stat = Sys::Filesystem.stat(loc)
   available = stat.block_size * stat.blocks_available
   free = {

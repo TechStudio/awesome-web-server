@@ -7,7 +7,7 @@ class Numeric
   end
 end
 
-def check_free_memory
+def free_memory
   results = {}
 
   free = `free -b`

@@ -1,9 +1,12 @@
 admin:
+  # Replace this with your own info
   name: "Ryan Burnette"
   email: "ryan.burnette@gmail.com"
 
 resources:
+  # Free disk space in bytes
   space_warn: 5368709120
   space_danger: 1073741824
+  # Free system memory in percentage of total
   memory_warn: 10
   memory_danger: 5

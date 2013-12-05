@@ -24,6 +24,7 @@ tests.each do |test|
   elsif test_result[:result] == 0
     print 'Fail'.red
   else
+    print 'Warn'.yellow
     print test_result[:result]
   end
 
