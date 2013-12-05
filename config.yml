@@ -1,10 +1,8 @@
 admin:
- -
   name: "Ryan Burnette"
   email: "ryan.burnette@gmail.com"
 
 resources:
- -
   space_warn: 5368709120
   space_danger: 1073741824
   memory_warn: 10
