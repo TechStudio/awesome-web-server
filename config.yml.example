@@ -11,3 +11,6 @@ resources:
   # Free system memory in percentage of total
   memory_warn: 10
   memory_danger: 5
+
+rails:
+  version: "4.0.2"

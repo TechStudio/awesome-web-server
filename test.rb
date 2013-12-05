@@ -36,9 +36,8 @@ tests.each do |file|
   end
 
   if test_result['result'] != 'pass'
-    print "\n\n"
+    print "\n"
     print test_result['message']
-    print "\n\n"
   end
 
   print "\n"
