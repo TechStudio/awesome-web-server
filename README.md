@@ -33,6 +33,11 @@ Tests
 After basic configuration is in place, `tests.rb` can be run. This will run all
 tests in the `./lib/tests/` directory.
 
+Current tests include:
+
++ Free Memory
++ Free Space
+
 ...
 
 ### How To Write A Test
