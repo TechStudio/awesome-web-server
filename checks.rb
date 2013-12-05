@@ -1,5 +1,3 @@
-require 'rubygems'
-require 'crack'
 require 'colorize'
 
 loaded = []
