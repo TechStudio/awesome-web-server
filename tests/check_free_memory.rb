@@ -25,4 +25,4 @@ def check_free_memory
   return memory
 end
 
-puts check_free_memory
+#puts check_free_memory
