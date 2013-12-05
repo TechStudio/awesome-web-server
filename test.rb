@@ -16,6 +16,7 @@ end
 Dir["./lib/tests/*.rb"].each do |file|
   tests.push(file)
 end
+tests.sort!
 
 tests.each do |file|
   test = file.sub('./lib/tests/','').sub('.rb','').gsub('_',' ').capitalize

@@ -37,6 +37,7 @@ Current tests include:
 
 + Free Memory
 + Free Space
++ Rails
 
 ...
 
