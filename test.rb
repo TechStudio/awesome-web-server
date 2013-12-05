@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'colorize'
 require 'ap'
 require './lib/send_email.rb'
