@@ -1,4 +1,9 @@
+#!/usr/bin/env ruby
 require 'filesize'
+require 'ap'
+require 'json'
+
+config = JSON.parse(ARGV.first)
 
 class Numeric
   def percent_of(n)
@@ -6,13 +11,13 @@ class Numeric
   end
 end
 
-def free_memory
+def free_memory(config)
   results = {}
 
   free = `free -b`
 
-  memory_warn = $config['resources']['memory_warn']
-  memory_danger = $config['resources']['memory_danger']
+  memory_warn = config['resources']['memory_warn']
+  memory_danger = config['resources']['memory_danger']
 
   memory_total = free.split(' ')[7].to_i
   memory_free = free.split(' ')[9].to_i
@@ -22,14 +27,16 @@ def free_memory
   memory_percent_free = memory_free.percent_of(memory_total).round
 
   if memory_percent_free > memory_warn
-    results[:result] = 2
+    results[:result] = 'pass'
   elsif memory_percent_free <= memory_warn && memory_percent_free > memory_danger
-    results[:result] = 1
+    results[:result] = 'warn'
   else
-    results[:result] = 0
+    results[:result] = 'fail'
   end
 
   results[:message] = "System memory: #{memory_free_pretty} of a total #{memory_total_pretty} (#{memory_percent_free}%) free."
 
-  return results
+  return results.to_json
 end
+
+puts free_memory(config)

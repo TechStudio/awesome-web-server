@@ -5,6 +5,7 @@ admin:
 
 resources:
   # Free disk space in bytes
+  space_loc: "/"
   space_warn: 5368709120
   space_danger: 1073741824
   # Free system memory in percentage of total

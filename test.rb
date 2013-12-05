@@ -3,35 +3,41 @@ require 'colorize'
 require 'ap'
 require './lib/send_email.rb'
 require 'yaml'
-
-$config = YAML.load_file('./config.yml')
+require 'json'
 
 tests = []
 
-Dir["./lib/tests/*.rb"].each do |file|
-  require file
-  test_name = tests.push(file.sub('./lib/tests/','').sub('.rb',''))
+begin
+  config = YAML.load_file('./config.yml').to_json.gsub("'", %q(\\\'))
+rescue => e
+  abort("Error parsing config: #{e}")
 end
 
-tests.each do |test|
-  print test.gsub('_',' ').capitalize + ': '
+Dir["./lib/tests/*.rb"].each do |file|
+  tests.push(file)
+end
 
-  test_result = send(test)
-
-  if test_result[:result] == 2
-    print 'Pass'.green
-  elsif test_result[:result] == 1
-    print 'Warn'.yellow
-  elsif test_result[:result] == 0
-    print 'Fail'.red
-  else
-    print 'Warn'.yellow
-    print test_result[:result]
+tests.each do |file|
+  test = file.sub('./lib/tests/','').sub('.rb','').gsub('_',' ').capitalize
+  print test + ': '
+  
+  begin
+    test_result = JSON.parse(`#{file} '#{config}'`)
+  rescue => e
+    abort("Error parsing results: #{e}")
   end
 
-  if test_result[:result] != 2 
+  if test_result['result'] == 'pass'
+    print test_result['result'].capitalize.green
+  elsif test_result['result'] == 'fail'
+    print test_result['result'].capitalize.red
+  else
+    print test_result['result'].capitalize.yellow
+  end
+
+  if test_result['result'] != 'pass'
     print "\n\n"
-    print test_result[:message]
+    print test_result['message']
     print "\n\n"
   end
 
