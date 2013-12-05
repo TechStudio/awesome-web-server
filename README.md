@@ -42,19 +42,17 @@ Current tests include:
 
 ### How To Write A Test
 
-Writing a test by creating a `.rb` file. Name your file the same as the function
-within which will be run by the `tests.rb` script.
+A test can be written in any language. The `test.rb` script will run each script in the
+`/lib/tests` directory, passing the local configuration as a string of JSON.
 
-Utilize the `$config` hash which is pulled from the `config.yml` file. Keep frequently
-modified variables and settings there for easy editing and future proofing.
+All tests must return JSON formatted as follows.
 
-return JSON formatted as follows ---
-
-```
-return = {
-  :result => 'pass', # 0 for fail 1 for warn 2 for pass
-  :message => '' # return a message which will be displayed if the status is not pass
+```JSON
+{ "result": "pass", # can be pass, fail, or warn
+, "message": "Hello world" # the message will be displayed if the result is not a pass
 }
 ```
 
-Don't forget to modify the example `config.json` and update the Gemfile for dependencies.
+If the new test requires options, don't forget to modify the `config.yml.example`. This
+settings file is converted to JSON by the `test.rb` script. Update dependecies via Gemfile,
+package.json, or wherever it is neccessary for new tests.
