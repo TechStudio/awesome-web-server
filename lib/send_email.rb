@@ -15,4 +15,4 @@ MESSAGE_END
   end
 end
 
-ts_send_email('Awesome Admin','no-reply@awesome.techstud.io','Ryan Burnette','ryan.burnette@gmail.com','Ryan Burnete','ryan.burnette@gmail.com','Test','This is a test.')
+#ts_send_email('Awesome Admin','no-reply@awesome.techstud.io','Ryan Burnette','ryan.burnette@gmail.com','Ryan Burnete','ryan.burnette@gmail.com','Test','This is a test.')
