@@ -1,5 +1,5 @@
-Web Server Checklist
-====================
+Web Server Config 
+=================
 
 The goal of this project is to document a function and secure web server config
 with the following capabilities:
