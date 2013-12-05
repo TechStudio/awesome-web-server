@@ -1,5 +1,4 @@
 require 'filesize'
-require 'ap'
 
 class Numeric
   def percent_of(n)
