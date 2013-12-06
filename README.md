@@ -12,6 +12,8 @@ with the following capabilities:
 + Rails
 + Node
 
+This project is meant for use with Ubuntu 12.04 x64.
+
 Configuring
 -----------
 
