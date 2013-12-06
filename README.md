@@ -1,7 +1,7 @@
 Web Server Config 
 =================
 
-The goal of this project is to document a function and secure web server config
+The goal of this project is to document a functional and secure web server config
 with the following capabilities:
 
 + SSH
