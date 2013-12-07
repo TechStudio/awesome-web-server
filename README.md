@@ -92,5 +92,9 @@ If the new test requires options, don't forget to modify the `config.yml.example
 settings file is converted to JSON by the `test.rb` script. Update dependecies via Gemfile,
 package.json, or wherever it is neccessary for new tests.
 
+License and Warranty
+--------------------
+
+This repository is licensed under GPL3 and comes with no warranty. Use at your own risk.
 
 [1]: http://blog.coolaj86.com/articles/how-i-setup-my-vpses.html
