@@ -12,12 +12,42 @@ with the following capabilities:
 + Rails
 + Node
 
-This project is meant for use with Ubuntu 12.04 x64.
+This project is meant for use with Ubuntu 12.x. It might worth on other versions, but
+there are no guarantees. If anyone wants to work on a branch for another version please
+feel free.
+
+Installing
+----------
+
+The `./bin/install/` directory contains scripts meant for easy install of packages needed
+for a web server.
+
+Start by running the initial script and performing initial configuration tasks.
+
+```
+./bin/install/initial.sh
+```
+
+Other initial tasks include setting the server hostname, creating a non-root user, and
+giving sudoers priveliges.
+
+The Ruby/RVM, Rubygems, Bundle, and Nodejs scripts should be run next. The tests depend
+upon these.
+
+```
+./bin/install/ruby-and-rvm.sh
+./bin/install/rubygems.sh
+bundle
+./bin/install/nodejs.sj
+```
+
+At this point the server tests can be run. It's a good idea to get the SSH test to a passing
+result before moving further.
 
 Configuring
 -----------
 
-...
+  Coming soon.
 
 Security
 --------
