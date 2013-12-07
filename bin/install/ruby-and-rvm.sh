@@ -1,3 +1,5 @@
+# This installs RVM and Ruby (latest stable)
+# Thanks @coolaj86 for the method
 # http://blog.coolaj86.com/articles/installing-ruby-on-ubuntu-12-04.html
 
 sudo apt-get remove --purge ruby-rvm ruby
