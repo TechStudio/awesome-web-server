@@ -31,6 +31,8 @@ Start by running the initial script and performing initial configuration tasks.
 Other initial tasks include setting the server hostname, creating a non-root user, and
 giving sudoers priveliges.
 
+@coolaj86 has a [good blog post][1] about [initial VPS configuration][1].
+
 The Ruby/RVM, Rubygems, Bundle, and Nodejs scripts should be run next. The tests depend
 upon these.
 
@@ -89,3 +91,6 @@ All tests must return JSON formatted as follows.
 If the new test requires options, don't forget to modify the `config.yml.example`. This
 settings file is converted to JSON by the `test.rb` script. Update dependecies via Gemfile,
 package.json, or wherever it is neccessary for new tests.
+
+
+[1]: http://blog.coolaj86.com/articles/how-i-setup-my-vpses.html
