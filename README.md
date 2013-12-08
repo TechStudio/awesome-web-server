@@ -22,11 +22,42 @@ Installing
 
 Before starting the install process, make sure that you create a new user account for
 yourself, add it to the admin group, give sudo/nopassword rights to that group, and
-give ownership of `/usr/local` to admin. There are two scripts in `./bin/configure`
-that will help.
+give ownership of `/usr/local` to admin.
 
 ```
-./bin/configure/sudo.sh # run as root
+# create a user account, replace me with your desired username
+useradd me
+# add yourself to admin group
+usermod -G admin me
+# make sure admin group has sudo/nopassword priveliges
+visudo
+```
+
+Add the following line using `visudo` if not present already.
+
+```
+%admin ALL=NOPASSWD: ALL
+```
+
+Log back in using your new account. This is a good time to generate a key, add it to
+the authorized keys and begin connecting without the use of a password. Digital Ocean
+wrote a good post about [connecting to SSH with keys][4]. These instructions mirror
+that post closely. These instructions assume, however, you are working from the terminal of the
+server.
+
+```
+cd ~
+mkdir .ssh
+cd .ssh
+touch authorized_keys
+ssh-keygen -t rsa # don't bother with a passphrase
+cat id_rsa.pub >> authorized_keys
+```
+
+Next I usually just cat the key and keep it locally for making connections to the server.
+
+```
+cat id_rsa.key
 ```
 
 At this point, go ahead and switch over to your own account.
@@ -136,3 +167,4 @@ This repository is licensed under GPL3 and comes with no warranty. Use at your o
 [1]: http://blog.coolaj86.com/articles/how-i-setup-my-vpses.html
 [2]: http://blog.coolaj86.com/articles/zsh-is-to-bash-as-vim-is-to-vi.html
 [3]: https://github.com/robbyrussell/oh-my-zsh
+[4]: https://www.digitalocean.com/community/articles/how-to-set-up-ssh-keys--2
