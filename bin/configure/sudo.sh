@@ -1,0 +1,1 @@
+echo "Run 'sudo visudo' and make sure the following line is in place\n%admin ALL=NOPASSWD: ALL\nMake sure you are a member of the admin group by running 'groups $USER'\nAdd yourself to that group if neccessary by running 'sudo usermod -G admin $USER'"
