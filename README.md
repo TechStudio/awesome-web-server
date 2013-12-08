@@ -1,14 +1,15 @@
-Web Server Config 
-=================
+awesome web server
+==================
 
-The goal of this project is to document a functional and secure web server config
+The goal of **awesome web server** is to document a functional and secure web server config
 with the following capabilities:
 
 + SSH
 + SFTP
 + MySQL
-+ Nginx
-+ Apache (reverse proxy behing Nginx)
++ WWW
+  + Nginx
+  + Apache (reverse proxy behing Nginx)
 + Rails
 + Node
 
@@ -49,17 +50,7 @@ result before moving further.
 Configuring
 -----------
 
-  Coming soon.
-
-Security
---------
-
-We'll put a few things into place for security.
-
-+ SSH
-  + Disable root login
-  + Disable password authentication
-+ fail2ban
+>> Coming soon.
 
 Tests
 -----
@@ -67,18 +58,27 @@ Tests
 After basic configuration is in place, `tests.rb` can be run. This will run all
 tests in the `./lib/tests/` directory.
 
-Current tests include:
+Tests are a great way to work through a checklist making sure all the basics are
+in place for a healthy web server.
+
+The following tests are in place:
 
 + Free Memory
 + Free Space
 + Rails
 
-...
+The following tests need to be written:
+
++ SSH
+  + Disable root login
+  + Disable password authentication
 
 ### How To Write A Test
 
 A test can be written in any language. The `test.rb` script will run each script in the
-`/lib/tests` directory, passing the local configuration as a string of JSON.
+`/lib/tests` directory, passing the local configuration as a string of JSON. Take a look
+at `config.sample.yml` to see what configuration variables are availale and will be passed
+to a test when it is called.
 
 All tests must return JSON formatted as follows.
 
@@ -88,9 +88,9 @@ All tests must return JSON formatted as follows.
 }
 ```
 
-If the new test requires options, don't forget to modify the `config.yml.example`. This
-settings file is converted to JSON by the `test.rb` script. Update dependecies via Gemfile,
-package.json, or wherever it is neccessary for new tests.
+If the new test requires options, don't forget to update `config.sample.yml`.
+Update dependecies via Gemfile,
+package.json, or wherever it is neccessary for your additions.
 
 License and Warranty
 --------------------
