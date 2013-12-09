@@ -90,6 +90,8 @@ listed on the oh-my-zsh README.
 ./bin/install/oh-my-zsh.sh
 ```
 
+> Need to write about installing pathogen#infect and solarized for Vim here.
+
 The Ruby/RVM, Rubygems, Bundle, and Nodejs scripts should be run next. The tests depend
 upon these.
 
