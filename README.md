@@ -52,7 +52,7 @@ cd .ssh
 touch authorized_keys
 # don't worry about using a passphrase
 ssh-keygen -t rsa
-cat id_rsa.pub >> authorized_keys
+cat id_rsa.pub > authorized_keys
 ```
 
 Next I usually just cat the key and keep it locally for making connections to the server.
