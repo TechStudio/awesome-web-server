@@ -1,0 +1,95 @@
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+
+server {
+  listen 80;
+
+  server_name someurl.com;
+
+  root /var/www/someurl.com/html/;
+
+  access_log /var/log/nginx/someurl.com.access.log;
+  error_log /var/log/nginx/someurl.com.error.log;
+
+  location ~* \.php$ {
+    try_files /dev/null @proxy;
+  }
+
+  location / {
+    try_files $uri $uri/ @proxy;
+    index index.html index.htm;
+    error_page 403 = @proxy;
+    error_page 404 = @proxy;
+  }
+
+  # Deny access to all dotfiles
+  location ~ /\. {
+    deny all;
+  }
+
+  # Named location for reverse proxy
+  location @proxy {
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header Host $host;
+    proxy_pass http://127.0.0.1:8080;
+  }
+
+  #error_page 404 /404.html;
+
+  # Only for nginx-naxsi : process denied requests
+  #location /RequestDenied {
+    # For example, return an error code
+    #return 418;
+  #}
+
+  # redirect server error pages to the static page /50x.html
+  #
+  #error_page 500 502 503 504 /50x.html;
+  #location = /50x.html {
+  # root /usr/share/nginx/www;
+  #}
+
+  # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+  #
+  # awesome: still need to work on FastCGI setup in the future
+  #
+  #location ~ \.php$ {
+  # fastcgi_split_path_info ^(.+\.php)(/.+)$;
+  # # NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+  #
+  # # With php5-cgi alone:
+  # fastcgi_pass 127.0.0.1:9000;
+  # # With php5-fpm:
+  # fastcgi_pass unix:/var/run/php5-fpm.sock;
+  # fastcgi_index index.php;
+  # include fastcgi_params;
+  #}
+}
+
+# HTTPS server
+#
+# awesome: Still need to work on HTTPS
+#
+#server {
+# listen 443;
+# server_name localhost;
+#
+# root html;
+# index index.html index.htm;
+#
+# ssl on;
+# ssl_certificate cert.pem;
+# ssl_certificate_key cert.key;
+#
+# ssl_session_timeout 5m;
+#
+# ssl_protocols SSLv3 TLSv1;
+# ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP;
+# ssl_prefer_server_ciphers on;
+#
+# location / {
+#   try_files $uri $uri/ /index.html;
+# }
+#}

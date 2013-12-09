@@ -105,6 +105,13 @@ bundle
 At this point the server tests can be run. It's a good idea to get the SSH test to a passing
 result before moving further.
 
+One of the important thigns to do to prepare SSH security is to install fail2ban. Install
+with sudo.
+
+```
+sudo ./bin/install/fail2ban.sh
+```
+
 ### Creating Install Scripts
 
 Sometimes install scripts are as simple as one line, but just the fact that they are there
