@@ -50,7 +50,8 @@ cd ~
 mkdir .ssh
 cd .ssh
 touch authorized_keys
-ssh-keygen -t rsa # don't bother with a passphrase
+# don't worry about using a passphrase
+ssh-keygen -t rsa
 cat id_rsa.pub >> authorized_keys
 ```
 
