@@ -120,7 +120,11 @@ before the shell script itself.
 Configuring
 -----------
 
->> Coming soon.
+If you install Postfix, run the configuration for it with sudo.
+
+```
+sudo ./bin/configure/postfix.sh
+```
 
 Tests
 -----
