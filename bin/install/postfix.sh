@@ -1,2 +1,2 @@
 # intall postfix
-apt-get install postfix
+sudo apt-get install postfix
