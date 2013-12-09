@@ -26,7 +26,7 @@ give ownership of `/usr/local` to admin.
 
 ```
 # create a user account, replace me with your desired username
-useradd me
+adduser me
 # add yourself to admin group
 usermod -G admin me
 # make sure admin group has sudo/nopassword priveliges
