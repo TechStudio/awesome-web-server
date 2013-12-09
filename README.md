@@ -126,7 +126,14 @@ before the shell script itself.
 Configuring
 -----------
 
-If you install Postfix, run the configuration for it with sudo.
+If you installed vsFTPd, the configuration script will make the neccessary changes to make
+sure it's only listening on the localhost interface.
+
+```
+sudo ./bin/configure/vsftpd.sh
+```
+
+If you installed Postfix, run the configuration for it with sudo.
 
 ```
 sudo ./bin/configure/postfix.sh
