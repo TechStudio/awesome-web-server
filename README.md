@@ -105,6 +105,12 @@ bundle
 At this point the server tests can be run. It's a good idea to get the SSH test to a passing
 result before moving further.
 
+If you're going to use FTP, run the vsFTPd install script with sudo.
+
+```
+sudo ./bin/install/vsftpd.sh
+```
+
 ### Creating Install Scripts
 
 Sometimes install scripts are as simple as one line, but just the fact that they are there
