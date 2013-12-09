@@ -110,6 +110,11 @@ with sudo.
 
 ```
 sudo ./bin/install/fail2ban.sh
+=======
+If you're going to use FTP, run the vsFTPd install script with sudo.
+
+```
+sudo ./bin/install/vsftpd.sh
 ```
 
 ### Creating Install Scripts
@@ -127,7 +132,14 @@ before the shell script itself.
 Configuring
 -----------
 
-If you install Postfix, run the configuration for it with sudo.
+If you installed vsFTPd, the configuration script will make the neccessary changes to make
+sure it's only listening on the localhost interface.
+
+```
+sudo ./bin/configure/vsftpd.sh
+```
+
+If you installed Postfix, run the configuration for it with sudo.
 
 ```
 sudo ./bin/configure/postfix.sh
