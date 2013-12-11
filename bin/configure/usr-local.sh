@@ -1,5 +1,5 @@
 # usr local should be owned by the admin group
-sudo chgrp -R admin /usr/local
+chgrp -R admin /usr/local
 
 # usr local should have 7 permissions for the admin group
-sudo chmod -R g=u /usr/local
+chmod -R g=u /usr/local
