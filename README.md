@@ -110,6 +110,9 @@ A test can be written in any language. The `test.rb` script will run each script
 at `config.sample.yml` to see what configuration variables are availale and will be passed
 to a test when it is called.
 
+Test files that begin with an underscore will be ignored. Use this to store tests which
+are in development or to disable tests you don't need for your local configuration.
+
 All tests must return two result attributes: result and message.
 
 + Result can be pass, fail, or warn.
