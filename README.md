@@ -31,6 +31,27 @@ Directory Structure
 `./lib` Libraries used by other scripts.
 `./lib/tests` System test scripts. Called by `./bin/test.rb`.
 
+Installation Scripts
+--------------------
+
+Some installation scripts are as simple as one line of bash which runs an `apt-get install`
+command. Others have more steps. They serve as a checklist and an affirmation that the method
+contained within has been tested.
+
+Configuration Scripts
+---------------------
+
+Configure scripts perform simple tasks related to the configuration of certain packages.
+
+In future versions most will be removed in favor of testing for options set in the `./etc`
+directory.
+
+Conventions
+-----------
+
+Comments should begin with the ignore character followed by "aws". Later we'll parse configurations
+looking for these markers.
+
 Tests
 -----
 
