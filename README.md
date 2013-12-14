@@ -50,7 +50,34 @@ Conventions
 -----------
 
 Comments should begin with the ignore character followed by "aws". Later we'll parse configurations
-looking for these markers.
+looking for these markers. Here are a few examples.
+
+```
+#aws Change a setting
+Setting Off
+```
+
+An ini file.
+
+```
+;aws Change a setting
+Setting = Off
+```
+
+Reference something with a URL.
+
+```
+#aws Change a setting
+#aws-ref http://exampleoverflow.com/example
+Setting On
+```
+
+Note that a file is untested.
+```
+#aws Sample Nginx configuration
+#aws-untested
+[...]
+```
 
 Tests
 -----
