@@ -1,4 +1,4 @@
-Make a swap drive
+Make A Swap Drive
 =================
 
 Create the swap.
