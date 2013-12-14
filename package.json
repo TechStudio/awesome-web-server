@@ -1,0 +1,15 @@
+{
+  "public": "false",
+  "name": "Awesome-Web-Server",
+  "version": "0.1.0",
+  "description": "A functional and secure web server configuration.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TechStudio/awesome-web-server.git"
+  },
+  "license": "GPL3",
+  "bugs": {
+    "url": "https://github.com/TechStudio/awesome-web-server/issues"
+  }
+}
