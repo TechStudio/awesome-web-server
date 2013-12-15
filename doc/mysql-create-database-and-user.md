@@ -41,5 +41,5 @@ SELECT User FROM mysql.user;
 To check privileges for a particular user, run this query.
 
 ```mysql
-SHOW GRANT FOR 'user'@'localhost';
+SHOW GRANTS FOR 'user'@'localhost';
 ```
