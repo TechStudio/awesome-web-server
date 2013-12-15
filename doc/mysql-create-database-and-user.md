@@ -31,3 +31,9 @@ Then let's flush the privileges before we leave.
 FLUSH PRIVILEGES;
 QUIT;
 ```
+
+To see a list of users, run this query.
+
+```mysql
+SELECT User FROM mysql.user;
+```
