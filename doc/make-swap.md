@@ -25,3 +25,5 @@ Enable.
 ```bash
 sudo swapon -a
 ```
+
+[1]: https://www.digitalocean.com/community/articles/how-to-add-swap-on-ubuntu-12-04
