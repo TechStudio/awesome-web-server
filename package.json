@@ -1,7 +1,7 @@
 {
   "public": "false",
   "name": "Awesome-Web-Server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A functional and secure web server configuration.",
   "main": "index.js",
   "repository": {

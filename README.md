@@ -133,6 +133,9 @@ package.json, or wherever it is neccessary for your additions.
 Version History
 ---------------
 
++ 0.1.1 2013-12-20
+  + Nginx config improvements
+  + Misc
 + 0.1.0 2013-12-14
   + Initial development version
 
