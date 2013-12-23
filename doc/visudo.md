@@ -13,7 +13,7 @@ visudo
 Make sure the following line is in place. It's there by default in most cases.
 
 ```
-%admin ALL=NOPASSWD: ALL
+%adm ALL=NOPASSWD: ALL
 ```
 
 Next make sure all users who need sudo privilegs are members of the admin group.
