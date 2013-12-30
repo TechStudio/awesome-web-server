@@ -7,6 +7,12 @@ Screen between users
 sudo chmod +s /usr/bin/screen
 ```
 
+The user creating the screen will need to have a `.screenrc` file with this line in it.
+
+```
+term screen-256color
+```
+
 Inside screen do the following:
 
 ```
@@ -19,5 +25,3 @@ The other user can type:
 ```
 screen -x username/
 ```
-
-Colors break .. there is a way to fix that though.
