@@ -5,3 +5,4 @@
 .vagrant
 tmp/librarian
 cookbooks
+.chef
