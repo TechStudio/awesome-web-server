@@ -6,7 +6,5 @@ sed -i.old "/listen_address/d" /etc/vsftpd.conf
 echo "listen=YES" >> /etc/vsftpd.conf
 echo "listen_address=127.0.0.1" >> /etc/vsftpd.conf
 
-sleep 1
-
 # restart
 service vsftpd restart
