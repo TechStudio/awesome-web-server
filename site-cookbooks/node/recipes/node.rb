@@ -1,2 +1,0 @@
-bash "command" do
-end
