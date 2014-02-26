@@ -48,6 +48,7 @@ sudo apt-get install -y \
 
 curl -L https://get.rvm.io | bash -s stable --ruby
 
-gem install cyaml --no-ri --no-rdoc
+#todo Need to reload the environment between these steps otherwise gem will fail due to permissions because it users the wrong folder
 
+gem install cyaml --no-ri --no-rdoc
 gem install bundler --no-ri --no-rdoc
