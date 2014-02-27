@@ -1,12 +1,17 @@
-execute "install_nginx" do
-  command "nginx=stable;add-apt-repository ppa:nginx/$nginx;apt-get update"
+execute "install_nginx_prereqs" do
+  command "apt-get install -y -q python-software-properties software-properties-common"
   user "root"
   action :run
-  #not_if do ! File.exists?("/tmp/nginx_lock") end
+end
+
+execute "add_nginx_apt_repository" do
+  command "add-apt-repository ppa:nginx/stable;apt-get update"
+  user "root"
+  action :run
   not_if {File.exists?("#{Chef::Config[:file_cache_path]}/nginx_lock")}
 end
 
-package "nginx-full" do
+package "install_nginx" do
   action :install
 end
 
@@ -24,7 +29,7 @@ end
 #  only_if {File.exists?("/etc/nginx/sites-available/default")}
 #end
 
-service "nginx" do
+service "nginx_service" do
   supports :restart => true, :start => true, :stop => true, :reload => true
   action [:enable,:start]
 end
