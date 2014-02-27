@@ -3,6 +3,5 @@
 , "description": "A development box."
 , "run_list": [
     "recipe[initial]"
-  , "recipe[initial::essentials]"
   ]
 }
