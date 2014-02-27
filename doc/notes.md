@@ -7,7 +7,9 @@ It's important to read [The Anatomy Of A Chef Run][2].
 
 ## Install chef
 
+```bash
 curl -L http://www.opscode.com/chef/install.sh | sudo bash
+```
 
 ## Run chef
 
