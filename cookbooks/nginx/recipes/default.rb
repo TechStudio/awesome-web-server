@@ -11,8 +11,8 @@ execute "add_nginx_apt_repository" do
   not_if {File.exists?("#{Chef::Config[:file_cache_path]}/nginx_lock")}
 end
 
-package "install_nginx" do
-  action :install
+package "nginx" do
+  action :upgrade
 end
 
 file "#{Chef::Config[:file_cache_path]}/nginx_lock" do
@@ -29,7 +29,7 @@ end
 #  only_if {File.exists?("/etc/nginx/sites-available/default")}
 #end
 
-service "nginx_service" do
+service "nginx" do
   supports :restart => true, :start => true, :stop => true, :reload => true
   action [:enable,:start]
 end

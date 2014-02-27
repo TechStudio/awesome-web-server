@@ -116,5 +116,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   chef.validation_client_name = "ORGNAME-validator"
 
   config.vm.provision :shell, :path => "install-chef-solo.sh"
-  config.vm.provision :shell, :inline => "sudo chef-solo -c /vagrant/solo.rb -j /vagrant/roles/dev.json"
+  config.vm.provision :shell, :inline => "sudo chef-solo -c /vagrant/solo.rb -j /vagrant/roles/test.json"
 end
