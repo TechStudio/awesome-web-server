@@ -1,2 +1,0 @@
-name "nginx_static"
-run_list "recipe[initial]"
