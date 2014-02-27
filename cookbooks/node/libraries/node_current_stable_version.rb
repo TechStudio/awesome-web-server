@@ -1,6 +1,6 @@
 require 'net/http'
 
-def node_current_stable_version
+def node_current_version
   url = URI.parse('http://nodejs.org/')
   req = Net::HTTP::Get.new(url.path)
   res = Net::HTTP.start(url.host, url.port) { |http|
