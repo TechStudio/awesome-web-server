@@ -1,4 +1,6 @@
 .DS_Store
-Gemfile.lock
 *.swp
-config.yml
+.bundle
+.vagrant
+tmp
+.chef

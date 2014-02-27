@@ -1,0 +1,13 @@
+{
+  "name": "nginx_php"
+, "description": "A LNMP web server."
+, "run_list": [
+    "recipe[initial]"
+  , "recipe[oh-my-zsh]"
+  , "recipe[node]"
+  , "recipe[nginx]"
+  , "recipe[php5-fpm]"
+  , "recipe[mysql]"
+  , "recipe[imagemagick]"
+  ]
+}
