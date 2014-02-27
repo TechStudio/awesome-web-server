@@ -2,11 +2,12 @@
 # Thanks @coolaj86 for the method
 # http://blog.coolaj86.com/articles/installing-ruby-on-ubuntu-12-04.html
 
+#todo Do this on only if forcing a full reinstall?
 sudo apt-get remove --purge ruby-rvm ruby
 sudo rm -rf /usr/share/ruby-rvm /etc/rmvrc /etc/profile.d/rvm.sh
-
 rm -rf ~/.rvm* ~/.gem/ ~/.bundle*
 
+#todo Should only do this if .gemrc doesn't exist
 echo 'gem: --no-rdoc --no-ri' >> ~/.gemrc
 tail ~/.gemrc
 
@@ -48,6 +49,7 @@ sudo apt-get install -y \
 
 curl -L https://get.rvm.io | bash -s stable --ruby
 
-gem install cyaml --no-ri --no-rdoc
+#todo Need to reload the environment between these steps otherwise gem will fail due to permissions because it users the wrong folder
 
+gem install cyaml --no-ri --no-rdoc
 gem install bundler --no-ri --no-rdoc
