@@ -10,23 +10,21 @@ package "nginx-full" do
   action :install
 end
 
-"""
-execute "remove-sites-enabled" do
-  command "rm /etc/nginx/sites-enabled/*"
-  user "root"
-  action :run
-  only_if {File.exists?("/etc/nginx/sites-available/default")}
-end
-"""
-
-service "nginx" do
-  supports :restart => true, :start => true, :stop => true, :reload => true
-  action [:enable,:start]
-end
-
 file "#{Chef::Config[:file_cache_path]}/nginx_lock" do
   owner "root"
   group "root"
   mode "0755"
-  action :create
+  action :touch
+end
+
+#execute "remove-sites-enabled" do
+#  command "rm /etc/nginx/sites-enabled/*"
+#  user "root"
+#  action :run
+#  only_if {File.exists?("/etc/nginx/sites-available/default")}
+#end
+
+service "nginx" do
+  supports :restart => true, :start => true, :stop => true, :reload => true
+  action [:enable,:start]
 end
