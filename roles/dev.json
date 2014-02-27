@@ -1,0 +1,7 @@
+{
+  "name": "dev"
+, "description": "A development box."
+, "run_list": [
+    "recipe[initial]"
+  ]
+}
