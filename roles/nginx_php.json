@@ -5,6 +5,7 @@
     "recipe[initial]"
   , "recipe[oh-my-zsh]"
   , "recipe[node]"
+  , "recipe[node::common_npms]"
   , "recipe[nginx]"
   , "recipe[php5-fpm]"
   , "recipe[mysql]"
