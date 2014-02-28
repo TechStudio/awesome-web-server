@@ -33,3 +33,5 @@ service "nginx" do
   supports :restart => true, :start => true, :stop => true, :reload => true
   action [:enable,:start]
 end
+
+# add templates to sites-available

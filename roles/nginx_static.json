@@ -3,6 +3,8 @@
 , "description": "An nginx-based static assets web server."
 , "run_list": [
     "recipe[initial]"
+  , "recipe[vim]"
+  , "recipe[oh-my-zsh]"
   , "recipe[nginx]"
   ]
 }

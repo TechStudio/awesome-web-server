@@ -1,3 +1,3 @@
 package "ntp" do
-  action :install
+  action :upgrade
 end

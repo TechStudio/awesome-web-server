@@ -1,4 +1,5 @@
 current_version = node_current_version
+current_installed_version = "" # get from lock file
 nodejs_tar = "node-v#{current_version}-linux-x64.tar.gz"
 nodejs_tar_dir = nodejs_tar.gsub(/.tar.gz/,'')
 nodejs_bin_url = "http://nodejs.org/dist/v#{current_version}/#{nodejs_tar}"

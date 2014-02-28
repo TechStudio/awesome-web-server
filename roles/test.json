@@ -3,6 +3,7 @@
 , "description": "A test role that installed everything."
 , "run_list": [
     "recipe[initial]"
+  , "recipe[vim]"
   , "recipe[oh-my-zsh]"
   , "recipe[node]"
   , "recipe[nginx]"

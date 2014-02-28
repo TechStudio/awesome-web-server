@@ -1,3 +1,4 @@
+# set to vagrant for now, need to use current user though
 user_id = "vagrant"
 
 git "/home/#{user_id}/.oh-my-zsh" do
