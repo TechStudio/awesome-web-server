@@ -8,7 +8,7 @@
   , "recipe[node]"
   , "recipe[node::common_npms]"
   , "recipe[nginx]"
-  , "recipe[php5-fpm]"
+  , "recipe[php5]"
   , "recipe[mysql]"
   , "recipe[imagemagick]"
   ]
