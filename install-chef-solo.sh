@@ -1,4 +1,4 @@
 wget http://www.opscode.com/chef/install.sh
 chmod +x install.sh
-./install.sh
+sudo ./install.sh
 source ~/.bashrc
