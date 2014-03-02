@@ -8,7 +8,7 @@ execute "add_nginx_apt_repository" do
   command "add-apt-repository ppa:nginx/stable;apt-get update"
   user "root"
   action :run
-  not_if {File.exists?("#{Chef::Config[:file_cache_path]}/nginx_lock")}
+  not_if "test -f #{Chef::Config[:file_cache_path]}/nginx_lock"
 end
 
 package "nginx" do

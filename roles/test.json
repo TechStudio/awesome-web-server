@@ -6,9 +6,10 @@
   , "recipe[vim]"
   , "recipe[oh-my-zsh]"
   , "recipe[node]"
-  , "recipe[nginx]"
-  , "recipe[php5-fpm]"
-  , "recipe[mysql]"
-  , "recipe[imagemagick]"
+//  , "recipe[nginx]"
+//  , "recipe[php5-fpm]"
+//  , "recipe[mysql]"
+//  , "recipe[imagemagick]"
+  , "recipe[ruby]"
   ]
 }

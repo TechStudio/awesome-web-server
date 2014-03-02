@@ -1,12 +1,12 @@
 current_version = node_current_version
-current_installed_version = "" # get from lock file
+current_installed_version = "" #todo get from lock file
 nodejs_tar = "node-v#{current_version}-linux-x64.tar.gz"
 nodejs_tar_dir = nodejs_tar.gsub(/.tar.gz/,'')
 nodejs_bin_url = "http://nodejs.org/dist/v#{current_version}/#{nodejs_tar}"
 destination_dir = "/usr/local"
 install_dirs = ['lib','bin','share']
 
-# want to check against lock and skip entire process if current version matches installed
+#todo want to check against lock and skip entire process if current version matches installed
 
 remote_file "/usr/local/src/#{nodejs_tar}" do
   source nodejs_bin_url
@@ -35,5 +35,5 @@ file "#{Chef::Config[:file_cache_path]}/node_lock" do
   group "root"
   mode "0755"
   action :touch
-  # want to put version in file #{current_version}
+  #todo want to put version in file #{current_version}
 end
