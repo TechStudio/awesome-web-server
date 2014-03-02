@@ -3,13 +3,15 @@
 , "description": "A test role."
 , "run_list": [
     "recipe[initial]"
-  , "recipe[vim]"
-  , "recipe[oh-my-zsh]"
-  , "recipe[node]"
+//  , "recipe[mysql]"
+//  , "recipe[mysql::create_user_database_pairs]"
+//  , "recipe[vim]"
+//  , "recipe[oh-my-zsh]"
+//  , "recipe[node]"
 //  , "recipe[nginx]"
 //  , "recipe[php5-fpm]"
 //  , "recipe[mysql]"
 //  , "recipe[imagemagick]"
-  , "recipe[ruby]"
+//  , "recipe[ruby]"
   ]
 }
