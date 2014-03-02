@@ -1,0 +1,5 @@
+{
+  "id": "nginx",
+  "primary_domain": "someurl.com",
+  "ssl_dir": "/etc/nginx/ssl"
+}

@@ -22,13 +22,6 @@ file "#{Chef::Config[:file_cache_path]}/nginx_lock" do
   action :touch
 end
 
-#execute "remove-sites-enabled" do
-#  command "rm /etc/nginx/sites-enabled/*"
-#  user "root"
-#  action :run
-#  only_if {File.exists?("/etc/nginx/sites-available/default")}
-#end
-
 service "nginx" do
   supports :restart => true, :start => true, :stop => true, :reload => true
   action [:enable,:start]
