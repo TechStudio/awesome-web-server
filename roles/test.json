@@ -1,6 +1,6 @@
 {
   "name": "test"
-, "description": "A test role that installed everything."
+, "description": "A test role."
 , "run_list": [
     "recipe[initial]"
   , "recipe[vim]"

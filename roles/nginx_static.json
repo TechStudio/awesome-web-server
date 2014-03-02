@@ -6,5 +6,7 @@
   , "recipe[vim]"
   , "recipe[oh-my-zsh]"
   , "recipe[nginx]"
+  , "recipe[fail2ban]"
+  , "recipe[logrotate]"
   ]
 }
