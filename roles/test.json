@@ -3,14 +3,14 @@
 , "description": "A test role."
 , "run_list": [
     "recipe[initial]"
-//  , "recipe[mysql]"
-//  , "recipe[mysql::create_user_database_pairs]"
 //  , "recipe[vim]"
 //  , "recipe[oh-my-zsh]"
 //  , "recipe[node]"
 //  , "recipe[nginx]"
 //  , "recipe[php5-fpm]"
 //  , "recipe[mysql]"
+//  , "recipe[mysql::initial_config]"
+//  , "recipe[mysql::create_user_database_pairs]"
 //  , "recipe[imagemagick]"
 //  , "recipe[ruby]"
   ]

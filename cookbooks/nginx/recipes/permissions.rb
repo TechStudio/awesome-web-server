@@ -1,4 +1,4 @@
-execute "set_www_permissions" do
+bash "set_www_permissions" do
   command "chown -R www-data:adm /var/www; chmod -R 774 /var/www"
   user "root"
 end
