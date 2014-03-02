@@ -8,5 +8,7 @@
   , "recipe[nginx]"
   , "recipe[fail2ban]"
   , "recipe[logrotate]"
+  , "recipe[ufw]"
+  , "recipe[ufw::config_web_server]"
   ]
 }

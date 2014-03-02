@@ -1,3 +1,3 @@
 package "ufw" do
-  action :install
+  action :upgrade
 end
