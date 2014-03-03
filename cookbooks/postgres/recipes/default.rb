@@ -1,5 +1,6 @@
 packages = [
-  'postgresql-9.1',
+  'postgresql',
+  'postgresql-contrib',
   'libpq-dev'
 ]
 

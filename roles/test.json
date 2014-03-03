@@ -13,5 +13,6 @@
 //  , "recipe[mysql::create_user_database_pairs]"
 //  , "recipe[imagemagick]"
 //  , "recipe[ruby]"
+  , "recipe[postgres]"
   ]
 }
