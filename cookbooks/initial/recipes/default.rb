@@ -16,7 +16,18 @@ initial_packages = [
 ]
 
 initial_packages.each do |p|
-  package "#{p}" do
+  apt_package "#{p}" do
     action :upgrade
   end
+end
+
+bash "usr_local_owned_by_adm_group" do
+  code "chgrp -R adm /usr/local; chmod -R 774 /usr/local"
+  user "root"
+end
+
+cron "maintain_usr_local_owned_by_adm_group" do
+  action :create
+  user "root"
+  command "chgrp -R adm /usr/local; chmod -R 774 /usr/local"
 end

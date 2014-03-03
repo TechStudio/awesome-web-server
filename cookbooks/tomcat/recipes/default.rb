@@ -1,9 +1,9 @@
 # https://github.com/sunspot/sunspot/wiki/Configure-Solr-on-Ubuntu,-the-quickest-way
 
-packages = ["openjdk-6-jdk","solr-tomcat"]
+packages = ["openjdk-7-jdk","solr-tomcat"]
 
 packages.each do |p|
-  package "#{p}" do
+  apt_package "#{p}" do
     action :upgrade
   end
 end

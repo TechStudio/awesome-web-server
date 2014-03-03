@@ -1,4 +1,4 @@
-package "fail2ban" do
+apt_package "fail2ban" do
   action :upgrade
 end
 

@@ -1,4 +1,4 @@
-package "postfix" do
+apt_package "postfix" do
   action :upgrade
 end
 

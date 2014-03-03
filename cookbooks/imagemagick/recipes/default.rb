@@ -1,3 +1,3 @@
-package "imagemagick" do
+apt_package "imagemagick" do
   action :install
 end

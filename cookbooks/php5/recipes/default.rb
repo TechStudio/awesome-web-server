@@ -1,9 +1,12 @@
-package "php5-fpm" do
-  action :upgrade
-end
+packages = [
+  'php5-fpm',
+  'php5-mysql'
+]
 
-package "php5-mysql" do
-  action :upgrade
+packages.each do |p|
+  apt_package "#{p}" do
+    action :upgrade
+  end
 end
 
 ruby_block "dont_expose_php_version" do

@@ -1,4 +1,4 @@
-package "vim" do
+apt_package "vim" do
   action :upgrade
 end
 

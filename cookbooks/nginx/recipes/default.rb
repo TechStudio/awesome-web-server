@@ -11,7 +11,7 @@ execute "add_nginx_apt_repository" do
   not_if "test -f #{Chef::Config[:file_cache_path]}/nginx_lock"
 end
 
-package "nginx" do
+apt_package "nginx" do
   action :upgrade
 end
 
