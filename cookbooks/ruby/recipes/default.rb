@@ -73,9 +73,18 @@ bash "usr_local_owned_by_adm_group" do
   user "root"
 end
 
+#template "/etc/profile.d/lang.sh" do
+#  source "lang.sh.erb"
+#  mode 0440
+#  owner "root"
+#  group "root"
+#  not_if "test -e /etc/profile.d/lang.sh"
+#end
+
 gems.each do |g|
-  gem_package "#{g}" do
-    :upgrade
+  bash "install gem #{g}" do
+    code "gem install #{g} --no-ri --no-rdoc"
+    user "root"
   end
 end
 

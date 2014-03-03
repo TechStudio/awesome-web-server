@@ -60,8 +60,8 @@ execute "prevent_zcompinit_error" do
   user "root"
 end
 
-cron "maintain_prevent_zcompinit_error" do
-  action :create
-  user "root"
-  command "chmod -R 755 /usr/local/share/zsh/site-functions"
-end
+#cron "maintain_prevent_zcompinit_error" do
+#  action :create
+#  user "root"
+#  command "chmod -R 755 /usr/local/share/zsh/site-functions"
+#end
