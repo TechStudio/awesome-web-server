@@ -68,21 +68,14 @@ bash 'install_ruby' do
   not_if "test -e #{Chef::Config[:file_cache_path]}/ruby_lock"
 end
 
-bash "usr_local_owned_by_adm_group" do
-  code "chgrp -R adm /usr/local; chmod -R 774 /usr/local"
+bash "maintain_usr_local_ownership_and_permissions_after_ruby" do
+  code "/usr/local/bin/usr-local-permissions.sh"
   user "root"
+  only_if "test -e /usr/local/bin/usr-local-permissions.sh"
 end
 
-#template "/etc/profile.d/lang.sh" do
-#  source "lang.sh.erb"
-#  mode 0440
-#  owner "root"
-#  group "root"
-#  not_if "test -e /etc/profile.d/lang.sh"
-#end
-
 gems.each do |g|
-  bash "install gem #{g}" do
+  bash "install_gem_#{g}" do
     code "gem install #{g} --no-ri --no-rdoc"
     user "root"
   end

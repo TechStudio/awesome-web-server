@@ -21,13 +21,14 @@ initial_packages.each do |p|
   end
 end
 
-bash "usr_local_owned_by_adm_group" do
-  code "chgrp -R adm /usr/local; chmod -R 774 /usr/local"
-  user "root"
+template "/usr/local/bin/usr-local-permissions.sh" do
+  source "usr-local-permissions.sh.erb"
+  mode 0770
+  owner "root"
+  group "adm"
+  not_if "test -e /usr/local/bin/usr-local-permissions.sh"
 end
 
-cron "maintain_usr_local_owned_by_adm_group" do
-  action :create
-  user "root"
-  command "chgrp -R adm /usr/local; chmod -R 774 /usr/local"
+cron "maintain_usr_local_permissions" do
+  command "/usr/local/bin/usr-local-permissions.sh"
 end

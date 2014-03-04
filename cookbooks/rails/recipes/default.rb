@@ -1,4 +1,4 @@
-bash "install gem rails" do
+bash "install_gem_rails" do
   code "gem install rails --no-ri --no-rdoc"
   user "root"
 end
