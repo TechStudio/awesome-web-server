@@ -1,6 +1,6 @@
 packages = [
   'php5-fpm',
-  'php-mysql'
+  'php5-mysql'
 ]
 
 packages.each do |p|
