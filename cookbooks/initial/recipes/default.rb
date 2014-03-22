@@ -21,14 +21,19 @@ initial_packages.each do |p|
   end
 end
 
-template "/usr/local/bin/usr-local-permissions.sh" do
-  source "usr-local-permissions.sh.erb"
+template "/usr/local/bin/usr_local_prm" do
+  source "usr_local_prm.erb"
   mode 0770
   owner "root"
   group "adm"
   not_if "test -e /usr/local/bin/usr-local-permissions.sh"
 end
 
-cron "maintain_usr_local_permissions" do
-  command "/usr/local/bin/usr-local-permissions.sh"
+execute "usr_local_prm" do
+  command "/usr/local/bin/usr_local_prm"
+  action :run
+end
+
+cron "usr_local_prm" do
+  command "/usr/local/bin/usr_local_prm"
 end
