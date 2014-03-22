@@ -1,3 +1,5 @@
+# this doesn't work at the moment
+
 nginx = data_bag_item("nginx","nginx")
 primary_domain = nginx["primary_domain"]
 ssl_dir = nginx["ssl_dir"]
