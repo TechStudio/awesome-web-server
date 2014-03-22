@@ -59,9 +59,3 @@ execute "prevent_zcompinit_error" do
   command "chmod -R 755 /usr/local/share/zsh/site-functions"
   user "root"
 end
-
-#cron "maintain_prevent_zcompinit_error" do
-#  action :create
-#  user "root"
-#  command "chmod -R 755 /usr/local/share/zsh/site-functions"
-#end
