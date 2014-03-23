@@ -9,18 +9,17 @@ packages.each do |p|
   end
 end
 
-ruby_block "dont_expose_php_version" do
-  block do
-    file = Chef::Util::FileEdit.new("/etc/php5/fpm/php.ini")
-    file.insert_line_if_no_match("expose_php = Off","expose_php = Off")
-    file.write_file
-  end
+template "/etc/php5/fpm/php.ini" do
+  source "php.ini.erb"
+  mode 0644
+  owner "root"
+  group "adm"
+  not_if "test -f #{Chef::Config[:file_cache_path]}/php5_lock"
 end
 
-ruby_block "set_sendmail_path" do
-  block do
-    file = Chef::Util::FileEdit.new("/etc/php5/fpm/php.ini")
-    file.insert_line_if_no_match("sendmail_path = /usr/sbin/sendmail -t -i","sendmail_path = /usr/sbin/sendmail -t -i")
-    file.write_file
-  end
+file "#{Chef::Config[:file_cache_path]}/php5_lock" do
+  owner "root"
+  group "root"
+  mode "0755"
+  action :touch
 end
