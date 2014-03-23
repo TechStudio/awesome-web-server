@@ -1,0 +1,11 @@
+{
+  "name": "basic"
+, "description": "Basic environment."
+, "run_list": [
+    "recipe[initial]"
+  , "recipe[vim]"
+  , "recipe[oh-my-zsh]"
+  , "recipe[node]"
+  , "recipe[ruby]"
+  ]
+}
