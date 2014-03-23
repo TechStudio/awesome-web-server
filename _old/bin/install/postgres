@@ -1,3 +1,0 @@
-#http://stackoverflow.com/a/11092808/2535178
-sudo apt-get install postgresql-9.1
-sudo apt-get install libpq-dev
