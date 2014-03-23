@@ -23,6 +23,15 @@ template "/etc/nginx/nginx.conf" do
   not_if "test -f #{Chef::Config[:file_cache_path]}/nginx_lock"
 end
 
+#install htpasswd.py for generating htpasswd files w/out apacheutils installed
+template "/usr/local/bin/htpasswd.py" do
+  source "htpasswd.py"
+  mode 0770
+  owner "root"
+  group "adm"
+  not_if "test -f #{Chef::Config[:file_cache_path]}/nginx_lock"
+end
+
 file "#{Chef::Config[:file_cache_path]}/nginx_lock" do
   owner "root"
   group "root"
