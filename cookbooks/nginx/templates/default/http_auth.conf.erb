@@ -1,7 +1,2 @@
-#aws Nginx HTTP auth
-location / {
-  auth_basic "Development";
-  auth_basic_user_file /var/www/.dev;
-
-  try_files $uri $uri/ /index.php;
-}
+auth_basic "Development";
+auth_basic_user_file /srv/.dev;
