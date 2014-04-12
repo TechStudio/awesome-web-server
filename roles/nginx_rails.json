@@ -17,5 +17,7 @@
   , "recipe[rails]"
   , "recipe[tomcat]"
   , "recipe[imagemagick]"
+  , "recipe[ufw]"
+  , "recipe[ufw::config]"
   ]
 }

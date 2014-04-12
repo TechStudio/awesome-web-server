@@ -11,5 +11,7 @@
   , "recipe[nginx::srv_own_prm]"
   , "recipe[php5]"
   , "recipe[imagemagick]"
+  , "recipe[ufw]"
+  , "recipe[ufw::config]"
   ]
 }
