@@ -12,6 +12,11 @@ apt_package "mysql-server" do
   only_if "test -f #{Chef::Config[:file_cache_path]}/mysql_lock"
 end
 
+apt_package "libmysqlclient-dev" do
+  action :upgrade
+  only_if "test -f #{Chef::Config[:file_cache_path]}/mysql_lock"
+end
+
 file "#{Chef::Config[:file_cache_path]}/mysql_lock" do
   owner "root"
   group "root"
