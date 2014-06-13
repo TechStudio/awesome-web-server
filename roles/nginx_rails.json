@@ -11,8 +11,6 @@
   , "recipe[node]"
   , "recipe[node::common_npms]"
   , "recipe[nginx]"
-  , "recipe[nginx::permissions]"
-  , "recipe[nginx::self_signed_ssl_cert]"
   , "recipe[postgres]"
   , "recipe[postfix]"
   , "recipe[ruby]"
