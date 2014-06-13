@@ -4,6 +4,8 @@
 , "run_list": [
     "recipe[initial]"
   , "recipe[ssh]"
+  , "recipe[ssh::disable_root_login]"
+  , "recipe[ssh::disable_password_authentication]"
   , "recipe[vim]"
   , "recipe[oh-my-zsh]"
   , "recipe[node]"
