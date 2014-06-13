@@ -11,6 +11,8 @@
   , "recipe[node]"
   , "recipe[node::common_npms]"
   , "recipe[nginx]"
+  , "recipe[nginx::add_adm_to_www_data]"
+  , "recipe[nginx::srv_own_prm]"
   , "recipe[postgres]"
   , "recipe[postfix]"
   , "recipe[ruby]"
