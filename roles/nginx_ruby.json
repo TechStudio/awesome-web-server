@@ -1,0 +1,10 @@
+{
+  "name": "nginx_ruby"
+, "description": "A basic Ruby development environment."
+, "run_list": [
+    "recipe[initial]"
+  , "recipe[vim]"
+  , "recipe[oh-my-zsh]"
+  , "recipe[ruby]"
+  ]
+}
