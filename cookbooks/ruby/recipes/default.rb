@@ -30,7 +30,7 @@ before_ruby.each do |p|
 end
 
 remote_file "/usr/local/src/ruby.tar.gz" do
-  source "https://ftp.ruby-lang.org/pub/ruby/stable-snapshot.tar.gz"
+  source "http://ftp.ruby-lang.org/pub/ruby/stable-snapshot.tar.gz"
   owner "root"
   group "adm"
   mode 0644
@@ -48,21 +48,21 @@ bash 'extract_ruby' do
 end
 
 bash 'configure_ruby' do
-  code "pushd /usr/local/src/ruby*; ./configure"
+  code "pushd /usr/local/src/stable-snapshot; ./configure"
   user "root"
   group "adm"
   not_if "test -e #{Chef::Config[:file_cache_path]}/ruby_lock"
 end
 
 bash 'make_ruby' do
-  code "pushd /usr/local/src/ruby*; make"
+  code "pushd /usr/local/src/stable-snapshot; make"
   user "root"
   group "adm"
   not_if "test -e #{Chef::Config[:file_cache_path]}/ruby_lock"
 end
 
 bash 'install_ruby' do
-  code "pushd /usr/local/src/ruby*; make install"
+  code "pushd /usr/local/src/stable-snapshot; make install"
   user "root"
   group "adm"
   not_if "test -e #{Chef::Config[:file_cache_path]}/ruby_lock"
