@@ -18,7 +18,7 @@ template "/etc/php5/fpm/php.ini" do
   not_if "test -f #{Chef::Config[:file_cache_path]}/php5_lock"
 end
 
-template "/etc/php5/fpm/pool.d/" do
+template "/etc/php5/fpm/pool.d/www.conf" do
   source "www.conf.erb"
   mode 0644
   owner "root"
