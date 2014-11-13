@@ -30,7 +30,7 @@ before_ruby.each do |p|
 end
 
 remote_file "/usr/local/src/ruby.tar.gz" do
-  source "http://ftp.ruby-lang.org/pub/ruby/stable-snapshot.tar.gz"
+  source "http://ftp.ruby-lang.org/pub/ruby/stable/ruby-2.1.4.tar.gz"
   owner "root"
   group "adm"
   mode 0644
