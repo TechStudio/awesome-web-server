@@ -48,21 +48,21 @@ bash 'extract_ruby' do
 end
 
 bash 'configure_ruby' do
-  code "pushd /usr/local/src/stable-snapshot; ./configure"
+  code "pushd /usr/local/src/ruby-2.1.4; ./configure"
   user "root"
   group "adm"
   not_if "test -e #{Chef::Config[:file_cache_path]}/ruby_lock"
 end
 
 bash 'make_ruby' do
-  code "pushd /usr/local/src/stable-snapshot; make"
+  code "pushd /usr/local/src/ruby-2.1.4; make"
   user "root"
   group "adm"
   not_if "test -e #{Chef::Config[:file_cache_path]}/ruby_lock"
 end
 
 bash 'install_ruby' do
-  code "pushd /usr/local/src/stable-snapshot; make install"
+  code "pushd /usr/local/src/ruby-2.1.4; make install"
   user "root"
   group "adm"
   not_if "test -e #{Chef::Config[:file_cache_path]}/ruby_lock"
