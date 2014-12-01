@@ -19,7 +19,6 @@ before_ruby = [
   'pkg-config'
 ]
 gems = [
-  'cyaml',
   'bundler'
 ]
 
@@ -30,7 +29,7 @@ before_ruby.each do |p|
 end
 
 remote_file "/usr/local/src/ruby.tar.gz" do
-  source "http://ftp.ruby-lang.org/pub/ruby/stable/ruby-2.1.4.tar.gz"
+  source "http://ftp.ruby-lang.org/pub/ruby/stable/ruby-2.1.4.tar.gz" # todo, get this URI a better way
   owner "root"
   group "adm"
   mode 0644
