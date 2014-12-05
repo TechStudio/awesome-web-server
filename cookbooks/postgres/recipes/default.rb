@@ -1,6 +1,8 @@
 ['postgresql', 'postgresql-contrib', 'libpq-dev'].each do |p|
-  apt_package "#{p}" do
-    action :upgrade
+  execute "apt_get_install_#{p}" do
+    command "apt-get install -y #{p}"
+    user :root
+    action :run
   end
 end
 
@@ -14,7 +16,7 @@ template "/etc/profile.d/lang.sh" do
   mode 0440
   owner "root"
   group "root"
-  not_if "test -e /etc/profile.d/lang.sh"
+  # not_if "test -e /etc/profile.d/lang.sh"
 end
 
 bash "postgresql_set_en_us_utf8_template1" do
@@ -25,7 +27,7 @@ bash "postgresql_set_en_us_utf8_template1" do
     psql -c "update pg_database set datistemplate=true where datname='template1'"
   EOF
   user "postgres"
-  not_if "test -e #{Chef::Config[:file_cache_path]}/postgres_initial_config_lock"
+  # not_if "test -e #{Chef::Config[:file_cache_path]}/postgres_initial_config_lock"
 end
 
 file "#{Chef::Config[:file_cache_path]}/postgres_initial_config_lock" do
