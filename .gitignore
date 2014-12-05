@@ -4,4 +4,4 @@
 .vagrant
 tmp
 .chef
-install.sh
+install.sh*
