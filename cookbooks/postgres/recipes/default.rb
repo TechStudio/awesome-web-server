@@ -3,12 +3,14 @@
     command "apt-get install -y -q #{p}"
     user "root"
     action :run
+    not_if "test -e #{Chef::Config[:file_cache_path]}/postgres_lock"
   end
 end
 
 service "postgresql" do
   supports :restart => true, :start => true, :stop => true, :reload => true
   action [:enable,:start]
+  not_if "test -e #{Chef::Config[:file_cache_path]}/postgres_lock"
 end
 
 template "/etc/profile.d/lang.sh" do
@@ -16,7 +18,7 @@ template "/etc/profile.d/lang.sh" do
   mode 0440
   owner "root"
   group "root"
-  # not_if "test -e /etc/profile.d/lang.sh"
+  not_if "test -e #{Chef::Config[:file_cache_path]}/postgres_lock"
 end
 
 bash "postgresql_set_en_us_utf8_template1" do
@@ -27,10 +29,10 @@ bash "postgresql_set_en_us_utf8_template1" do
     psql -c "update pg_database set datistemplate=true where datname='template1'"
   EOF
   user "postgres"
-  # not_if "test -e #{Chef::Config[:file_cache_path]}/postgres_initial_config_lock"
+  not_if "test -e #{Chef::Config[:file_cache_path]}/postgres_lock"
 end
 
-file "#{Chef::Config[:file_cache_path]}/postgres_initial_config_lock" do
+file "#{Chef::Config[:file_cache_path]}/postgres_lock" do
   owner "root"
   group "root"
   mode "0755"
