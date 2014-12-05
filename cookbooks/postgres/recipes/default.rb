@@ -1,7 +1,7 @@
 ['postgresql', 'postgresql-contrib', 'libpq-dev'].each do |p|
   execute "apt_get_install_#{p}" do
     command "apt-get install -y #{p}"
-    user :root
+    user "root"
     action :run
   end
 end
