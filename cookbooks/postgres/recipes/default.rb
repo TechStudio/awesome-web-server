@@ -1,10 +1,4 @@
-packages = [
-  'postgresql',
-  'postgresql-contrib',
-  'libpq-dev'
-]
-
-packages.each do |p|
+['postgresql', 'postgresql-contrib', 'libpq-dev'].each do |p|
   apt_package "#{p}" do
     action :upgrade
   end
@@ -25,10 +19,10 @@ end
 
 bash "postgresql_set_en_us_utf8_template1" do
   code <<-EOF
-    psql postgres -c "update pg_database set datistemplate=false where datname='template1'"
-    psql postgres -c "drop database template1"
-    psql postgres -c "create database template1 with owner=postgres encoding='UTF-8' lc_collate='en_US.utf8' lc_ctype='en_US.utf8' template template0"
-    psql postgres -c "update pg_database set datistemplate=true where datname='template1'"
+    psql -c "update pg_database set datistemplate=false where datname='template1'"
+    psql -c "drop database template1"
+    psql -c "create database template1 with owner=postgres encoding='UTF-8' lc_collate='en_US.utf8' lc_ctype='en_US.utf8' template template0"
+    psql -c "update pg_database set datistemplate=true where datname='template1'"
   EOF
   user "postgres"
   not_if "test -e #{Chef::Config[:file_cache_path]}/postgres_initial_config_lock"
