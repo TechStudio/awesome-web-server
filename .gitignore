@@ -5,3 +5,5 @@
 tmp
 .chef
 install.sh*
+
+cookbooks/nginx
