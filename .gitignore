@@ -9,3 +9,4 @@ install.sh*
 cookbooks/nginx
 cookbooks/postgres
 cookbooks/ruby
+cookbooks/node
