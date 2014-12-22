@@ -17,3 +17,8 @@ wget https://github.com/chef-ubuntu/node/tarball/master
 tar zxf master
 mv chef-ubuntu-node* cookbooks/node
 rm master
+
+wget https://github.com/chef-ubuntu/sqlite3/tarball/master
+tar zxf master
+mv chef-ubuntu-sqlite3* cookbooks/sqlite3
+rm master
