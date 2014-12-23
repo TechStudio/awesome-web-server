@@ -22,3 +22,8 @@ wget https://github.com/chef-ubuntu/imagemagick/tarball/master
 tar zxf master
 mv chef-ubuntu-imagemagick* cookbooks/imagemagick
 rm master
+
+wget https://github.com/chef-ubuntu/sqlite3/tarball/master
+tar zxf master
+mv chef-ubuntu-sqlite3* cookbooks/sqlite3
+rm master
