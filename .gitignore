@@ -6,7 +6,11 @@ tmp
 .chef
 install.sh*
 
+cookbooks/essentials
+cookbooks/fish
+cookbooks/imagemagick
 cookbooks/nginx
-cookbooks/postgres
+cookbooks/postgresql
 cookbooks/ruby
 cookbooks/node
+cookbooks/sqlite3
