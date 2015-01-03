@@ -1,10 +1,9 @@
 {
-  "name": "nginx_php"
-, "description": "A LNMP web server."
+  "name": "lnmp"
+, "description": "lnmp"
 , "run_list": [
-    "recipe[initial]"
-  , "recipe[vim]"
-  , "recipe[oh-my-zsh]"
+    "recipe[essentails]"
+  , "recipe[fish]"
   , "recipe[ssh]"
   , "recipe[ssh::disable_root_login]"
   , "recipe[ssh::disable_password_authentication]"
