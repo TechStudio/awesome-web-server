@@ -6,5 +6,6 @@
   , "recipe[fish]"
   , "recipe[ruby]"
   , "recipe[node]"
+  , "recipe[usr-local]"
   ]
 }

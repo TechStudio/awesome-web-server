@@ -8,7 +8,6 @@
   , "recipe[ssh::disable_root_login]"
   , "recipe[ssh::disable_password_authentication]"
   , "recipe[nginx]"
-  , "recipe[nginx-permissions]"
   , "recipe[mysql]"
   , "recipe[php5]"
   , "recipe[ruby]"
@@ -17,5 +16,6 @@
   , "recipe[postfix]"
   , "recipe[ufw]"
   , "recipe[ufw::config]"
+  , "recipe[usr-local]"
   ]
 }
