@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-  
+
   config.vm.box = 'ubuntu/trusty64'
 
   hostname = "chef-solo-test"
@@ -18,7 +18,7 @@ Vagrant.configure(2) do |config|
 
     chef.add_recipe "essentials"
     chef.add_recipe "fish"
-    chef.add_recipe "nginx"
+    chef.add_recipe "usr-local"
   end
 
 end
