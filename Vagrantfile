@@ -1,25 +1,25 @@
+hostname = "chef-solo-test"
+project  = "chef-solo"
+box      = "ubuntu/trusty64"
+memory   = "1024"
+recipes  = %w{essentials fish permissions}
+
 Vagrant.configure(2) do |config|
-
-  config.vm.box = 'ubuntu/trusty64'
-
-  hostname = "chef-solo-test"
+  config.vm.box = box
   config.vm.hostname = hostname
 
   config.vm.provider :virtualbox do |vb|
-    vb.customize ['modifyvm', :id, '--memory', '512']
+    vb.customize ["modifyvm", :id, "--memory", memory]
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
 
-  config.vm.synced_folder './', '/home/vagrant/chef-solo',
-    owner: 'vagrant', group: 'vagrant',
-    mount_options: ['dmode=755','fmode=755']
+  config.vm.synced_folder "./", "/home/vagrant/#{project}",
+    owner: "vagrant", group: "vagrant",
+    mount_options: ["dmode=755","fmode=755"]
 
   config.vm.provision "chef_solo" do |chef|
     chef.node_name = hostname
-
-    chef.add_recipe "essentials"
-    chef.add_recipe "fish"
-    chef.add_recipe "usr-local"
+    chef.cookbooks_path = "cookbooks"
+    recipes.each { |r| chef.add_recipe r }
   end
-
 end
-

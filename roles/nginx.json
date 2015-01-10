@@ -14,6 +14,6 @@
   , "recipe[postfix]"
   , "recipe[ufw]"
   , "recipe[ufw::config]"
-  , "recipe[usr-local]"
+  , "recipe[permissions]"
   ]
 }
