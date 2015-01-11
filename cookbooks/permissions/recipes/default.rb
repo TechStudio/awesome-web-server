@@ -1,7 +1,3 @@
-apt_package "acl" do
-  action :upgrade
-end
-
 group "adm" do
   action :create
 end
@@ -9,8 +5,8 @@ end
 bash "/usr/local permissions" do
   code <<-EOF
     chgrp -R adm /usr/local
-    chmod -R g+rwxs /usr/local
-    setfacl -m g:adm:rwx /usr/local
+    chmod -R g+rwx /usr/local
+    chmod g+s /usr/local
   EOF
   user "root"
 end
@@ -22,8 +18,8 @@ end
 bash "/var/lib/gems permissions" do
   code <<-EOF
     chgrp -R adm /var/lib/gems
-    chmod -R g+rwxs /var/lib/gems
-    setfacl -m g:adm:rwx /var/lib/gems
+    chmod -R g+rwx /var/lib/gems
+    chmod g+s /var/lib/gems
   EOF
   user "root"
 end
@@ -35,8 +31,8 @@ end
 bash "/srv permissions" do
   code <<-EOF
     chgrp -R srv /srv
-    chmod -R g+rwxs /srv
-    setfacl -m g:adm:rwx /srv
+    chmod -R g+rwx /srv
+    chmod g+s /srv
   EOF
   user "root"
 end

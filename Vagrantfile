@@ -22,4 +22,6 @@ Vagrant.configure(2) do |config|
     chef.cookbooks_path = "cookbooks"
     recipes.each { |r| chef.add_recipe r }
   end
+
+  config.vm.provision "shell", inline: "sudo usermod -a -G adm vagrant"
 end
