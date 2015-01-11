@@ -1,7 +1,7 @@
 hostname = "chef-solo-test"
 project  = "chef-solo"
 box      = "ubuntu/trusty64"
-memory   = "1024"
+memory   = "512"
 recipes  = %w{essentials fish permissions}
 
 Vagrant.configure(2) do |config|
@@ -24,4 +24,5 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "shell", inline: "sudo usermod -a -G adm vagrant"
+  config.vm.provision "shell", inline: "touch ~/.gemrc && echo 'gem: --no-document' > ~/.gemrc"
 end
