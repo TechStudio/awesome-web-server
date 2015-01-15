@@ -1,3 +1,5 @@
+password = "qqqqqq"
+
 bash "mysql_initial_install" do
   code <<-EOH
     export DEBIAN_FRONTEND=noninteractive
@@ -23,9 +25,6 @@ file "#{Chef::Config[:file_cache_path]}/mysql_lock" do
   mode "0755"
   action :touch
 end
-
-mysql_initial = data_bag_item("mysql", "initial")
-password = mysql_initial["root_password"]
 
 bash "mysql_initial_config" do
   code <<-EOH
