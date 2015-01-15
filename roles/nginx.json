@@ -8,7 +8,7 @@
   , "recipe[ssh::disable_root_login]"
   , "recipe[ssh::disable_password_authentication]"
   , "recipe[nginx]"
-  , "recipe[ruby]"
+  , "recipe[ruby::brightbox_ppa]"
   , "recipe[node]"
   , "recipe[fail2ban]"
   , "recipe[postfix]"

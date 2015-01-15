@@ -4,7 +4,7 @@
 , "run_list": [
     "recipe[essentials]"
   , "recipe[fish]"
-  , "recipe[ruby]"
+  , "recipe[ruby::brightbox_ppa]"
   , "recipe[node]"
   , "recipe[permissions]"
   ]

@@ -10,7 +10,7 @@
   , "recipe[nginx]"
   , "recipe[mysql]"
   , "recipe[php5]"
-  , "recipe[ruby]"
+  , "recipe[ruby::brightbox_ppa]"
   , "recipe[node]"
   , "recipe[fail2ban]"
   , "recipe[postfix]"
