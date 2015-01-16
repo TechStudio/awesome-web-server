@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-for cookbook in essentials fish nginx postgresql ruby node imagemagick sqlite3 redis-server
+for chef_ubuntu_cookbook in essentials fish nginx postgresql ruby ruby-install node imagemagick sqlite3 redis-server
 do
-  ./get-cookbook.sh $cookbook
+  ./get-chef-ubuntu-cookbook.sh $chef_ubuntu_cookbook
 done

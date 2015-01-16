@@ -13,6 +13,7 @@ cookbooks/imagemagick
 cookbooks/nginx
 cookbooks/postgresql
 cookbooks/ruby
+cookbooks/ruby-install
 cookbooks/node
 cookbooks/sqlite3
 cookbooks/redis-server
