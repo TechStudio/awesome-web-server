@@ -12,7 +12,7 @@ cookbooks/fish
 cookbooks/imagemagick
 cookbooks/nginx
 cookbooks/postgresql
-cookbooks/ruby
+cookbooks/ruby-brightbox
 cookbooks/ruby-install
 cookbooks/node
 cookbooks/sqlite3
