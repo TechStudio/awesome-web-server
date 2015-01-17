@@ -1,0 +1,16 @@
+{
+  "name": "pgdb"
+, "description": "pgdb"
+, "run_list": [
+    "recipe[essentials]"
+  , "recipe[ssh]"
+  , "recipe[ssh::disable_root_login]"
+  , "recipe[ssh::disable_password_authentication]"
+  , "recipe[fail2ban]"
+  , "recipe[postgresql]"
+  , "recipe[postgresql::enable_hstore]"
+  , "recipe[ufw]"
+  , "recipe[ufw::config]"
+  , "recipe[permissions]"
+  ]
+}
