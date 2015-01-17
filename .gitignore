@@ -17,3 +17,4 @@ cookbooks/ruby-install
 cookbooks/node
 cookbooks/sqlite3
 cookbooks/redis-server
+cookbooks/ufw
