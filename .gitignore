@@ -18,3 +18,4 @@ cookbooks/node
 cookbooks/sqlite3
 cookbooks/redis-server
 cookbooks/ufw
+cookbooks/php5
