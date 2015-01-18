@@ -19,3 +19,6 @@ cookbooks/sqlite3
 cookbooks/redis-server
 cookbooks/ufw
 cookbooks/php5
+cookbooks/chef-wordpress-development
+
+data_bags/chef-wordpress-development

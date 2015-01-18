@@ -3,3 +3,4 @@ for chef_ubuntu_cookbook in essentials fish nginx postgresql ruby-brightbox ruby
 do
   ./get-chef-ubuntu-cookbook.sh $chef_ubuntu_cookbook
 done
+./get-chef-wordpress-development-cookbook.sh
