@@ -32,10 +32,10 @@ bash "mysql_initial_config" do
     echo "grant all privileges on *.* to 'root'@'%' identified by '#{password}'; FLUSH PRIVILEGES;" | mysql -u root -p#{password}
   EOH
   user "root"
-  not_if "test -f #{Chef::Config[:file_cache_path]}/mysql_intial_config_lock"
+  not_if "test -f #{Chef::Config[:file_cache_path]}/mysql_initial_config_lock"
 end 
 
-file "#{Chef::Config[:file_cache_path]}/mysql_intial_config_lock" do
+file "#{Chef::Config[:file_cache_path]}/mysql_initial_config_lock" do
   owner "root"
   group "root"
   mode "0755"

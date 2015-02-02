@@ -20,5 +20,6 @@ cookbooks/redis-server
 cookbooks/ufw
 cookbooks/php5
 cookbooks/chef-wordpress-development
+cookbooks/mysql
 
 data_bags/chef-wordpress-development
