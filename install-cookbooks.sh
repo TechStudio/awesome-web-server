@@ -4,3 +4,4 @@ do
   ./get-chef-ubuntu-cookbook.sh $chef_ubuntu_cookbook
 done
 ./get-chef-wordpress-development-cookbook.sh
+./get-chef-permissions-cookbook.sh

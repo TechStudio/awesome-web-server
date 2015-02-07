@@ -22,5 +22,6 @@ cookbooks/php5
 cookbooks/wordpress-development
 cookbooks/mysql
 cookbooks/fail2ban
+cookbooks/permissions
 
 data_bags/chef-wordpress-development
